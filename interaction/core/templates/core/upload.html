@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather app</title>
+    <style>
+        * {
+        margin: 0;
+        font-family: "Serif fonts", Monaco, "Courier New", Courier, monospace;
+        box-sizing: boarder-box;
+        }
+        #main{
+            text-align: center;
+            padding-top : 100px;
+            position: relative;
+        }
+
+        input[type='text'] {
+            width 30% ;
+            padding: 10px;
+            boarder : 2px solid black;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+        input[type='file'] {
+            width 30% ;
+            padding: 10px;
+            boarder : 2px solid black;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+         input[type='submit'] {
+            width 100% ;
+            padding: 10px;
+            boarder : 2px solid black;
+            background: black;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .form{
+            margin-bottom = 10px;
+        }
+        tr:nth-child(even) {background-color: #f2f2f2;}
+        .tables{
+           align: center;
+        }
+        table.center {
+           margin-left:auto;
+           margin-right:auto;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:link {
+             background-color: WhiteSmoke;
+        }
+
+        a:visited {
+             background-color: Azure;
+        }
+
+        a:hover {
+             background-color: MintCream;
+        }
+
+        a:active {
+              background-color: FloralWhite;
+        }
+    </style>
+</head>
+<body>
+
+<!--don't provide the action so action will be in the same page-->
+<div id="main">
+    <h1>Upload</h1>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="key" id="token" placeholder="key....">
+            <br>
+         <input type="file" name="document" id="file" placeholder="file....">
+            <br>
+        <input type="submit" value="upload"/>
+    </form>
+    {% if urls %}
+    <br>
+
+            <table class="center">
+            {% for url in urls %}
+            <tr>
+                <td><a href='{{url.url}}'>{{url.name}}</a> </td>
+            </tr>
+            {% endfor %}
+            </table>
+<!--            <p> Uploaded file: <a href='{{url}}'>{{url}}</a></p>-->
+<!--        <h3>{{weather.region}}</h3><br>-->
+<!--        <h3>{{weather.daytime}}</h3>-->
+<!--        <h3>{{weather.temp}}</h3>-->
+    {% endif %}
+</div>
+</body>
+</html>
