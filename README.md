@@ -16,9 +16,10 @@ django-admin startapp core
 
 
 * This project is about the uploading the single or multiple file on the server and share the files present on the server including new ones.
-<img src='Screenshot 2022-08-15 at 9.19.36 PM.png' img>
+<img src='Screenshot 2022-08-15 at 9.19.36 PM.png' height = '500' img>
 * This project's homepages tells about the weather at any place which is implemented by searching the querry on the search engine then scrapping the information from the page and show it on the page.
-<img src='Screenshot 2022-08-15 at 9.22.10 PM.png' img>
+<img src='Screenshot 2022-08-15 at 9.22.10 PM.png' width = '800' img>
+
 ## Features
 * In this project it is insured that anyone cannot upload the file without having a key for accessing the server.
 * Key changes after every successful attempt.
